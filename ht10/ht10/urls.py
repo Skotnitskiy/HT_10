@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from jobstories import views
+import jobstories.views
+import newstories.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('jobstories/', views.jobstories),
+    path('jobstories/', jobstories.views.jobstories),
+    path('newstories/', newstories.views.newstories),
 ]

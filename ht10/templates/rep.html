@@ -17,7 +17,7 @@
         <th>title</th>
         <th>type</th>
         <th>url</th>
-    {% for row in rows %}
+        {% for row in rows %}
         <tr>
             <td>{{row.by}}</td>
             <td>{{row.descendants}}</td>
@@ -28,9 +28,13 @@
             <td>{{row.time}}</td>
             <td>{{row.title}}</td>
             <td>{{row.type}}</td>
+            {% if row.url %}
             <td><a href={{row.url}}>{{row.url}}</a></td>
+            {% else %}
+            <td></td>
         </tr>
-    {% endfor %}
+            {%endif%}
+        {% endfor %}
     </table>
 </ul>
 
